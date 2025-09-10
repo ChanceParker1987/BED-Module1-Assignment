@@ -1,11 +1,17 @@
 import express, { Express } from "express";
+import healthRoutes from "./api/v1/routes/healthRoutes";
 
-// Initialize Express application
 const app: Express = express();
 
-// Define a route
-app.get("/", (req, res) => {
-    res.send("Hello, World!");
+// Global middleware
+app.use(express.json());
+
+// Register API routes
+app.use("/api/v1", healthRoutes);
+
+// Default route for unknown endpoints
+app.use((req, res) => {
+    res.status(404).json({ error: "Route not found" });
 });
 
 export default app;
