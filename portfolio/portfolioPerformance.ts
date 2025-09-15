@@ -25,7 +25,7 @@ export const calculatePortfolioPerformance = (
 
   // Use a ternary expression instead of if statements
   const performanceSummary =
-    percentageChange > 20
+    percentageChange >= 20 
       ? `The portfolio has gained significantly with a profit of $${profitOrLoss}.`
       : percentageChange < 0
       ? `The portfolio has declined with a loss of $${Math.abs(profitOrLoss)}.`
