@@ -1,12 +1,12 @@
 import express, { Express } from "express";
 import {
   calculatePortfolioPerformance,
-} from "portfolio/portfolioPerformance";
+} from "../portfolio/portfolioPerformance";
 import {
   findLargestHolding,
   calculateAssetAllocation,
   Asset,
-} from "portfolio/portfolioUtils";
+} from "../portfolio/portfolioUtils";
 
 // Initialize Express application
 const app: Express = express();
